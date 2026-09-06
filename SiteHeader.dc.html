@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc><helmet><style>*{box-sizing:border-box}</style></helmet>
+<header style="position:sticky;top:8px;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:12px 14px;background:#f1f4e9d9;backdrop-filter:blur(14px);border-bottom:1px solid #173c2a14;font-family:Arial,Helvetica,sans-serif">
+<a href="nevtech-homepage.html" aria-label="NevTech AI home" style="display:inline-flex;align-items:center;gap:11px;font-size:20px;font-weight:600;letter-spacing:-.5px;color:#183c2f;text-decoration:none;padding:0 6px;white-space:nowrap"><span aria-hidden="true" style="width:31px;height:31px;border-radius:7px;background:#109d87;display:grid;place-items:center;font:700 15px Arial,Helvetica,sans-serif;color:#fff">N</span><span>NevTech <em style="font-style:normal;font-weight:400;color:#566d5f">AI</em></span></a>
+<sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+<nav aria-label="Main navigation" style="display:flex;align-items:center;gap:20px;border-radius:7px;background:#fffef6;padding:5px 5px 5px 20px;font-size:13px;border:1px solid #214b2f22;position:relative">
+<a href="services.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Services</a>
+<a href="rapid-mvp.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Rapid MVP</a>
+<a href="nova-ai.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Nova AI</a>
+<div style="position:relative" onMouseEnter="{{ openFly }}" onMouseLeave="{{ closeFly }}">
+<button type="button" onClick="{{ toggleFly }}" aria-expanded="{{ flyOpen }}" style="background:none;border:0;padding:9px 0;font:inherit;color:#183c2f;cursor:pointer;white-space:nowrap;display:inline-flex;gap:7px;align-items:center" style-hover="color:#07806a"><span style="color:#07806a;font-size:11px">↗</span>AI Projects <span style="font-size:10px;color:#566d5f">▾</span></button>
+<sc-if value="{{ flyOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:100%;left:-24px;padding-top:12px;z-index:40">
+<div style="background:#fffef6;border:1px solid #214b2f22;border-radius:7px;box-shadow:0 24px 60px #0b2a2226;padding:10px;width:360px;display:grid;gap:2px">
+<a href="ai-projects.dc.html" style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:5px;text-decoration:none;color:#183c2f" style-hover="background:#e5eddf"><span aria-hidden="true" style="width:34px;height:34px;border-radius:5px;background:#dcecdf;color:#07806a;display:grid;place-items:center;font-size:16px">◎</span><span><strong style="display:block;font-size:13px;font-weight:600">Custom AI projects</strong><span style="font-size:12px;color:#566d5f;line-height:1.5">RAG search, data taxonomy, automations, meeting intelligence.</span></span></a>
+<a href="fractional-caio.dc.html" style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:5px;text-decoration:none;color:#183c2f" style-hover="background:#e5eddf"><span aria-hidden="true" style="width:34px;height:34px;border-radius:5px;background:#dcecdf;color:#07806a;display:grid;place-items:center;font-size:16px">↗</span><span><strong style="display:block;font-size:13px;font-weight:600">Fractional CAIO</strong><span style="font-size:12px;color:#566d5f;line-height:1.5">Part-time AI leadership without the full-time salary.</span></span></a>
+<a href="ai-lead-generation.dc.html" style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:5px;text-decoration:none;color:#183c2f" style-hover="background:#e5eddf"><span aria-hidden="true" style="width:34px;height:34px;border-radius:5px;background:#dcecdf;color:#07806a;display:grid;place-items:center;font-size:16px">⇄</span><span><strong style="display:block;font-size:13px;font-weight:600">AI lead generation</strong><span style="font-size:12px;color:#566d5f;line-height:1.5">Automated outreach and follow-up that fills the calendar.</span></span></a>
+<a href="use-cases.dc.html" style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:5px;text-decoration:none;color:#183c2f" style-hover="background:#e5eddf"><span aria-hidden="true" style="width:34px;height:34px;border-radius:5px;background:#dcecdf;color:#07806a;display:grid;place-items:center;font-size:16px">⊞</span><span><strong style="display:block;font-size:13px;font-weight:600">Use cases by industry</strong><span style="font-size:12px;color:#566d5f;line-height:1.5">Healthcare, legal, home services, logistics, manufacturing.</span></span></a>
+<a href="seo-landing.dc.html?page=ai-indianapolis" style="display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:5px;text-decoration:none;color:#183c2f" style-hover="background:#e5eddf"><span aria-hidden="true" style="width:34px;height:34px;border-radius:5px;background:#dcecdf;color:#07806a;display:grid;place-items:center;font-size:16px">⌖</span><span><strong style="display:block;font-size:13px;font-weight:600">AI in Indianapolis</strong><span style="font-size:12px;color:#566d5f;line-height:1.5">Local AI consulting, automation, and voice agents.</span></span></a>
+</div></div>
+</sc-if>
+</div>
+<a href="fractional-caio.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Fractional CAIO</a>
+<a href="products.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Products</a>
+<a href="about.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">About</a>
+<a href="blog.dc.html" style="padding:9px 0;white-space:nowrap;color:#183c2f;text-decoration:none" style-hover="color:#07806a" style-before="content:'↗';color:#07806a;font-size:11px;margin-right:7px">Blog</a>
+<a href="contact.dc.html" style="padding:9px 12px;white-space:nowrap;color:#183c2f;text-decoration:none;border-radius:4px" style-hover="background:#e5eddf">Contact</a>
+<a href="contact.dc.html" style="display:inline-flex;align-items:center;gap:18px;padding:12px 18px;background:#0b8068;color:#fff;font-size:13px;font-weight:600;border:1px solid #0b8068;border-radius:4px;min-height:44px;text-decoration:none;white-space:nowrap" style-hover="background:#075c4a">Let’s build <span aria-hidden="true">↗</span></a>
+</nav>
+</sc-if>
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" style="border:1px solid #214b2f22;border-radius:5px;background:#fffef6;padding:10px 16px;font:12px Arial,Helvetica,sans-serif;color:#183c2f;cursor:pointer">{{ menuLabel }}</button>
+</sc-if>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile navigation" style="position:sticky;top:78px;z-index:29;margin:0 9px;display:grid;gap:4px;padding:16px;background:#fffef6;border:1px solid #214b2f22;border-radius:7px;box-shadow:0 20px 50px #0b2a2226;font:14px Arial,Helvetica,sans-serif">
+<a href="nevtech-homepage.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Home</a>
+<a href="services.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Services</a>
+<a href="rapid-mvp.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Rapid MVP</a>
+<a href="nova-ai.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Nova AI</a>
+<a href="ai-projects.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">AI Projects</a>
+<a href="fractional-caio.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Fractional CAIO</a>
+<a href="products.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Products</a>
+<a href="about.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">About</a>
+<a href="blog.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Blog</a>
+<a href="contact.dc.html" style="padding:10px 6px;color:#183c2f;text-decoration:none">Contact</a>
+<a href="contact.dc.html" style="margin-top:8px;display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:13px 18px;background:#0b8068;color:#fff;font-size:13px;font-weight:600;border-radius:4px;text-decoration:none">Let’s build <span aria-hidden="true">↗</span></a>
+</nav>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: false, flyOpen: false };
+  componentDidMount() {
+    this.mq = matchMedia('(max-width: 1120px)');
+    this.onMq = () => this.setState({ narrow: this.mq.matches, menuOpen: false });
+    this.onMq(); this.mq.addEventListener('change', this.onMq);
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    const s = this.state;
+    return {
+      wide: !s.narrow, narrow: s.narrow, menuOpen: s.menuOpen, flyOpen: s.flyOpen,
+      menuLabel: s.menuOpen ? 'Close −' : 'Menu +',
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      openFly: () => this.setState({ flyOpen: true }),
+      closeFly: () => this.setState({ flyOpen: false }),
+      toggleFly: () => this.setState({ flyOpen: !s.flyOpen })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><title>Contact — NevTech AI</title><style>*{box-sizing:border-box}body{margin:0;padding:8px;background:#080e0c}a{color:#07806a}a:hover{color:#075c4a}h1,h2,h3,h4,p{margin:0}input,select,textarea{font:inherit}</style></helmet>
+<div style="max-width:1800px;margin:auto;background:#f1f4e9;border-radius:17px;overflow:clip;border:1px solid #ffffff10;color:#183c2f;font:16px/1.6 Arial,Helvetica,sans-serif">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+<main>
+<section data-screen-label="Contact hero" style="padding:80px 6% 56px;border-bottom:1px solid #173c2a22">
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">//01 Get in touch</p>
+<h1 style="font:normal clamp(46px,5.6vw,86px)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-2.6px;margin:16px 0 24px;max-width:900px">Let’s find the<br><em style="font-style:italic;color:#07806a">right place to begin.</em></h1>
+<p style="font-size:17px;line-height:1.6;color:#566d5f;max-width:560px">Bring the bottleneck, the product idea, or the question. A real person replies within one business day.</p>
+</section>
+<section data-screen-label="Contact options" style="padding:50px 6%;border-bottom:1px solid #173c2a22;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+<a href="tel:3175089493" style="padding:23px 21px;border:1px solid #214b2f22;border-radius:5px;background:#fffef6;text-decoration:none;color:#183c2f;display:grid;gap:14px" style-hover="border-color:#217d5955;background:#e5eddf"><span style="font:10px 'Courier New',monospace;letter-spacing:1px;color:#557561">//01 PHONE</span><span style="font:normal 25px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.6px">(317) 508-9493</span><span style="font-size:13px;color:#5a705f">Mon–Fri, 9–5 Eastern. After hours, Nova answers.</span></a>
+<a href="mailto:cody@nevtech.io" style="padding:23px 21px;border:1px solid #214b2f22;border-radius:5px;background:#fffef6;text-decoration:none;color:#183c2f;display:grid;gap:14px" style-hover="border-color:#217d5955;background:#e5eddf"><span style="font:10px 'Courier New',monospace;letter-spacing:1px;color:#557561">//02 EMAIL</span><span style="font:normal 25px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.6px">cody@nevtech.io</span><span style="font-size:13px;color:#5a705f">Straight to the founder. Attach anything useful.</span></a>
+<a href="https://calendly.com/cody-nevtech/30min" style="padding:23px 21px;border:1px solid #214b2f22;border-radius:5px;background:#fffef6;text-decoration:none;color:#183c2f;display:grid;gap:14px" style-hover="border-color:#217d5955;background:#e5eddf"><span style="font:10px 'Courier New',monospace;letter-spacing:1px;color:#557561">//03 SCHEDULE</span><span style="font:normal 25px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.6px">Book 30 minutes</span><span style="font-size:13px;color:#5a705f">Pick a time on Calendly. Free, no obligation.</span></a>
+</section>
+<section data-screen-label="Form" style="padding:70px 6%;border-bottom:1px solid #173c2a22;background:#e8efe0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 60px;align-items:start">
+<div><p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">//02 Send a message</p><h2 style="font:normal clamp(34px,3.6vw,52px)/1.08 Georgia,'Times New Roman',serif;letter-spacing:-1.5px;margin:13px 0 20px">Tell us what’s<br>slowing you down.</h2><p style="font-size:14px;color:#566d5f;max-width:340px">We read every message. Expect a reply, not a drip campaign.</p><p style="font:10px/1.9 'Courier New',monospace;text-transform:uppercase;letter-spacing:1px;color:#55745d;margin-top:30px">Indianapolis, IN · USA<br>Serving Indiana in person, AI projects nationwide</p></div>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="display:grid;gap:14px;background:#fffef6;border:1px solid #214b2f22;border-radius:8px;padding:28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Full name *<input name="name" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Email address *<input type="email" name="email" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Company<input name="company" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Phone number<input type="tel" name="phone" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+</div>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Subject *<select name="subject" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px"><option value="">Choose one</option><option>AI Strategy Consultation</option><option>Custom AI Development</option><option>Process Automation</option><option>Data Analytics</option><option>Cellular &amp; Internet</option><option>General Inquiry</option><option>Partnership</option></select></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49"><span style="display:flex;justify-content:space-between">Message * <span style="font:10px 'Courier New',monospace;color:#55745d">{{ count }} / 500</span></span><textarea name="message" required="{{ true }}" maxLength="500" rows="5" onChange="{{ onMessage }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px;resize:vertical" style-focus="outline:2px solid #07806a;outline-offset:1px"></textarea></label>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:6px"><button type="submit" style="display:inline-flex;align-items:center;gap:18px;padding:14px 20px;background:#0b8068;color:#fff;font-size:13px;font-weight:600;border:1px solid #0b8068;border-radius:4px;min-height:49px;cursor:pointer" style-hover="background:#075c4a">Send message <span aria-hidden="true">↗</span></button><span style="font-size:11px;color:#55745d">We’ll never share your details.</span></div>
+</form>
+</sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="background:#fffef6;border:1px solid #217d5955;border-radius:8px;padding:40px 28px;display:grid;gap:14px"><p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">Message received</p><h3 style="font:normal 34px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-1px">Thanks. We’ll be in touch within one business day.</h3><p style="font-size:14px;color:#566d5f">Need something sooner? Call <a href="tel:3175089493" style="color:#07806a">(317) 508-9493</a>.</p></div>
+</sc-if>
+</section>
+<section data-screen-label="CTA" style="padding:80px 6%;background:#0f2f27;color:#f1f4ec">
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#7eddb8">//03 Prefer to skip the form?</p>
+<h2 style="font:normal clamp(42px,5vw,72px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-2px;margin:17px 0 24px;max-width:800px">Call, email,<br><em style="font-style:normal;color:#7eddb8">or book a time.</em></h2>
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center"><a href="tel:3175089493" style="display:inline-flex;align-items:center;gap:18px;padding:14px 20px;background:#eff5ee;color:#0b2118;font-size:13px;font-weight:600;border-radius:4px;min-height:49px;text-decoration:none" style-hover="background:#fff">Call now <span aria-hidden="true">↗</span></a><a href="mailto:cody@nevtech.io" style="display:inline-flex;align-items:center;gap:18px;padding:14px 20px;background:transparent;color:#f1f4ec;font-size:13px;font-weight:600;border:1px solid #ffffff33;border-radius:4px;min-height:49px;text-decoration:none" style-hover="background:#ffffff14">Send email</a><a href="https://calendly.com/cody-nevtech/30min" style="font-size:12px;color:#d2e1d6;text-decoration:none" style-hover="color:#7eddb8">Book a meeting <span aria-hidden="true">↗</span></a></div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, count: 0 };
+  renderVals() {
+    return {
+      sent: this.state.sent, notSent: !this.state.sent, count: this.state.count,
+      onMessage: (e) => this.setState({ count: e.target.value.length }),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><title>Project Intake — NevTech AI</title><style>*{box-sizing:border-box}body{margin:0;padding:8px;background:#080e0c}a{color:#07806a}a:hover{color:#075c4a}h1,h2,h3,p{margin:0}input,select,textarea{font:inherit}</style></helmet>
+<div style="max-width:1800px;margin:auto;background:#f1f4e9;border-radius:17px;overflow:clip;border:1px solid #ffffff10;color:#183c2f;font:16px/1.6 Arial,Helvetica,sans-serif">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+<main>
+<section data-screen-label="Intake hero" style="padding:80px 6% 48px;border-bottom:1px solid #173c2a22">
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">//01 Project intake</p>
+<h1 style="font:normal clamp(44px,5.4vw,84px)/1.02 Georgia,'Times New Roman',serif;letter-spacing:-2.6px;margin:16px 0 24px;max-width:900px">Tell us about<br><em style="font-style:italic;color:#07806a">the project.</em></h1>
+<p style="font-size:17px;line-height:1.6;color:#566d5f;max-width:560px">Ten minutes here saves an hour on the first call. We read every answer and come back with a fixed-price proposal or a list of questions.</p>
+</section>
+<section data-screen-label="Intake form" style="padding:60px 6% 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 60px;align-items:start">
+<div style="display:grid;gap:22px;font-size:14px;color:#566d5f;max-width:360px"><p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">What happens next</p><p><strong style="color:#183c2f;font-weight:600">Day 1:</strong> we confirm receipt and book a 30-minute call if needed.</p><p><strong style="color:#183c2f;font-weight:600">Day 3:</strong> a written proposal with scope, timeline, and one price.</p><p><strong style="color:#183c2f;font-weight:600">Week 2:</strong> kickoff, if you say yes. No obligation if you don’t.</p></div>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="display:grid;gap:14px;background:#fffef6;border:1px solid #214b2f22;border-radius:8px;padding:28px">
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#55745d">About you</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Full name *<input name="name" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Work email *<input type="email" name="email" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Company *<input name="company" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Phone<input type="tel" name="phone" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+</div>
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#55745d;margin-top:10px">About the project</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Type of work *<select name="type" required="{{ true }}" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px"><option value="">Choose one</option><option>Rapid MVP (new product)</option><option>Custom AI project</option><option>Workflow automation</option><option>AI voice agent / Nova</option><option>Fractional CAIO</option><option>Cellular / internet</option><option>Not sure yet</option></select></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Budget range<select name="budget" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px"><option>Under $10K</option><option>$10K–$25K</option><option>$25K–$75K</option><option>$75K+</option><option>Monthly retainer</option></select></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Timeline<select name="timeline" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px"><option>As soon as possible</option><option>Within 1–2 months</option><option>This quarter</option><option>Exploring</option></select></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Company size<select name="size" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px"><option>1–5</option><option>6–20</option><option>21–50</option><option>51–200</option><option>200+</option></select></label>
+</div>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">What problem are you trying to solve? *<textarea name="problem" required="{{ true }}" rows="4" placeholder="What happens today, who it affects, and what better looks like." style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px;resize:vertical" style-focus="outline:2px solid #07806a;outline-offset:1px"></textarea></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">Systems involved<input name="systems" placeholder="e.g. HubSpot, QuickBooks, ServiceTitan, Google Workspace" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<label style="display:grid;gap:6px;font-size:12px;color:#3d5a49">How will you know it worked?<input name="measure" placeholder="e.g. 20 hours/week saved, zero missed calls, quotes out same day" style="padding:12px 14px;border:1px solid #214b2f33;border-radius:4px;background:#f9fbf4;color:#183c2f;font-size:14px" style-focus="outline:2px solid #07806a;outline-offset:1px"></label>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:6px"><button type="submit" style="display:inline-flex;align-items:center;gap:18px;padding:14px 20px;background:#0b8068;color:#fff;font-size:13px;font-weight:600;border:1px solid #0b8068;border-radius:4px;min-height:49px;cursor:pointer" style-hover="background:#075c4a">Submit intake <span aria-hidden="true">↗</span></button><span style="font-size:11px;color:#55745d">Confidential. See our <a href="legal.dc.html?page=privacy">privacy policy</a>.</span></div>
+</form>
+</sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="background:#fffef6;border:1px solid #217d5955;border-radius:8px;padding:40px 28px;display:grid;gap:14px"><p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a">Intake received</p><h3 style="font:normal 34px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-1px">Thanks. A proposal or a short list of questions is on its way.</h3><p style="font-size:14px;color:#566d5f">Expect a reply within one business day from cody@nevtech.io.</p></div>
+</sc-if>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() { return { sent: this.state.sent, notSent: !this.state.sent, submit: (e) => { e.preventDefault(); this.setState({ sent: true }); } }; }
+}
+</script>
+</body>
+</html>

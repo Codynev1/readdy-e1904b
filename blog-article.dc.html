@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><title>Article — NevTech AI</title><style>*{box-sizing:border-box}body{margin:0;padding:8px;background:#080e0c}a{color:#07806a}a:hover{color:#075c4a}h1,h2,h3,p{margin:0}</style></helmet>
+<div style="max-width:1800px;margin:auto;background:#f1f4e9;border-radius:17px;overflow:clip;border:1px solid #ffffff10;color:#183c2f;font:16px/1.6 Arial,Helvetica,sans-serif">
+<dc-import name="SiteHeader" hint-size="100%,72px"></dc-import>
+<main>
+<article>
+<header data-screen-label="Article header" style="padding:80px 6% 48px;border-bottom:1px solid #173c2a22">
+<a href="blog.dc.html" style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a;text-decoration:none">← Blog / {{ category }}</a>
+<h1 style="font:normal clamp(38px,4.6vw,70px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-2px;margin:18px 0 22px;max-width:960px">{{ title }}</h1>
+<p style="font-size:17px;line-height:1.6;color:#566d5f;max-width:640px">{{ excerpt }}</p>
+<p style="font:10px/1.9 'Courier New',monospace;text-transform:uppercase;letter-spacing:1px;color:#55745d;margin-top:26px">{{ author }} · {{ date }} · {{ read }} read</p>
+</header>
+<div data-screen-label="Article body" style="padding:56px 6% 80px;display:grid;grid-template-columns:minmax(0,720px);justify-content:start;gap:22px">
+<sc-for list="{{ body }}" as="b" hint-placeholder-count="6">
+<sc-if value="{{ b.h }}" hint-placeholder-val="{{ false }}"><h2 style="font:normal 30px/1.15 Georgia,'Times New Roman',serif;letter-spacing:-.8px;margin-top:18px">{{ b.h }}</h2></sc-if>
+<sc-if value="{{ b.p }}" hint-placeholder-val="{{ true }}"><p style="font-size:17px;line-height:1.85;color:#2c4a3a">{{ b.p }}</p></sc-if>
+</sc-for>
+<div style="margin-top:30px;border-top:1px solid #173c2a22;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center"><p style="font-size:13px;color:#566d5f">Written by {{ author }}, Founder of NevTech AI, Indianapolis.</p><a href="contact.dc.html" style="display:inline-flex;align-items:center;gap:18px;padding:12px 18px;background:#0b8068;color:#fff;font-size:13px;font-weight:600;border-radius:4px;text-decoration:none" style-hover="background:#075c4a">Talk to us <span aria-hidden="true">↗</span></a></div>
+</div>
+</article>
+<section data-screen-label="More" style="padding:50px 6% 70px;border-top:1px solid #173c2a22;background:#e8efe0">
+<p style="font:10px/1.5 'Courier New',monospace;text-transform:uppercase;letter-spacing:1.5px;color:#07806a;margin-bottom:18px">Keep reading</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+<sc-for list="{{ more }}" as="m" hint-placeholder-count="3">
+<a href="{{ m.href }}" style="display:grid;gap:10px;padding:18px;border:1px solid #214b2f22;border-radius:5px;background:#fffef6;text-decoration:none;color:#183c2f" style-hover="border-color:#217d5955"><span style="font:10px 'Courier New',monospace;letter-spacing:1px;color:#07806a;text-transform:uppercase">{{ m.category }}</span><span style="font:normal 21px/1.2 Georgia,'Times New Roman',serif;letter-spacing:-.5px">{{ m.title }}</span></a>
+</sc-for>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,380px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { post: null, more: [] };
+  async componentDidMount() {
+    const { posts, order } = await import('./blog-posts.js');
+    const slug = new URLSearchParams(location.search).get('post');
+    const key = posts[slug] ? slug : order[0];
+    const post = posts[key];
+    document.title = post.title + ' — NevTech AI';
+    const more = order.filter(k => k !== key).slice(0, 3).map(k => ({ href: 'blog-article.dc.html?post=' + k, title: posts[k].title, category: posts[k].category }));
+    this.setState({ post, more });
+  }
+  renderVals() {
+    const p = this.state.post || {};
+    return { title: p.title, excerpt: p.excerpt, category: p.category, date: p.date, author: p.author, read: p.read, body: p.body || [], more: this.state.more };
+  }
+}
+</script>
+</body>
+</html>
